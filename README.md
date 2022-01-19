@@ -35,7 +35,10 @@ GET http://localhost:4000/logistics/create
     - Quantity of the Product
     - Origin - Where is the product coming from
     - Destination - Where will the product go
-    The request will be handled by the logistics controller which will save it (via POST logistics/save request) using the database client to store the incoming data. On a successful save, the user will be redirected to the home page.
+    The request will be handled by the logistics controller
+    which will save it (via POST logistics/save request) 
+    using the database client to store the incoming data. On 
+    a successful save, the user will be redirected to the home page.
 
 GET http://localhost:4000/logistics/:_id
 
