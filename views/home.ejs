@@ -23,12 +23,10 @@
       csv = csv.join('\r\n')
       const blob = new Blob([csv])
       if (window.navigator.msSaveOrOpenBlob) {
-        window.navigator.msSaveBlob(blob, "filename.csv")
+        window.navigator.msSaveBlob(blob, "data.csv")
       } else {
         const temp = window.document.createElement("a")
-        temp.href = window.URL.createObjectURL(blob, {
-          type: "text/plain"
-        })
+        temp.href = window.URL.createObjectURL(blob, { type: "text/plain" })
         temp.download = "data.csv"
         document.body.appendChild(temp)
         temp.click()

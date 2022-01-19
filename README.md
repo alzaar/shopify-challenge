@@ -74,27 +74,38 @@ EXPORT CSV Overview
 
 ## Project Setup
 
-**Please make sure node, npm, and docker are installed before continuing**.
+**Please make sure node, npm, postman and docker are installed before continuing**.
 
-1. Open up a terminal/CLI and type/paste  
+1. Clone the repository via
+
+```bash
+git clone 
+```
+
+2. Open up a terminal/CLI and type/paste  
 
 ```bash
 docker pull docker.elastic.co/elasticsearch/elasticsearch:7.16.3
 ```
 This pulls the docker image from which we will create a container for elasticsearch.
 
-2. Then type/paste
+3. Then type/paste
 
 ```bash
 docker run -p 127.0.0.1:9200:9200 --name es-container -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.16.3
 ```
-3. Open another terminal window or tab and then navigate to the cloned folder, once inside type/paste the following:
+
+4. Open up postman and make a put request (link - localhost:9200/shopify_index?pretty)  as shown
+
+![POSTMAN](postman.png "POSTMAN PUT")
+
+5. Open another terminal window or tab and then navigate to the cloned folder, once inside type/paste the following:
 
 ```bash
 npm install
 ```
 
-4. Finally type/paste the following:
+6. Finally type/paste the following:
 
 ```bash
 npm start
