@@ -15,7 +15,6 @@ This app uses Express JS (built on top of the node js) and Elasticsearch.
  ** The view engine used for rendering views is **ejs** and a bit of client code (mainly javascript) used for exporting data to a csv. The database client is an abstraction built on top of the elasticsearch client to enable granular control over the database. 
 
 ## Demo Video
-Demo
 
 https://user-images.githubusercontent.com/39810925/150198655-5d5ae7b8-d360-4e4f-8490-6f34bd43fc5c.mov
 
