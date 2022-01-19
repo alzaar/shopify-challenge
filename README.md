@@ -25,7 +25,8 @@ Demo Video
 GET http://localhost:4000/
 
     Navigtes to Homepage
-    This invokes the get request handler of the logistics controller which fetches all of the products from the inventory.
+    This invokes the get request handler of the logistics 
+    controller which fetches all of the products from the inventory.
 
 GET http://localhost:4000/logistics/create
 
@@ -42,11 +43,13 @@ GET http://localhost:4000/logistics/create
 
 GET http://localhost:4000/logistics/:_id
 
-    GET request that renders a web page with a form and pre-filled values for the product. On clicking modify, a PUT request is made via logistics/update including the form body containing the product details to be modified and saved. If the save is successful, the user will be redirected to the home page.
+    GET request that renders a web page with a form and pre-filled values for the product. On clicking modify, a PUT request is made via logistics/update including the 
+    form body containing the product details to be modified and saved. If the save is successful, the user will be redirected to the home page.
 
 POST http://localhost:4000/logistics/save
 
-    A POST request to save the product details. On a successful save, user is redirected to the home page.
+    A POST request to save the product details. On a 
+    successful save, user is redirected to the home page.
 
 PUT http://localhost:4000/logistics/update
 
@@ -58,7 +61,9 @@ DELETE http://localhost:4000/logistics/:_id
 
 EXPORT CSV Overview
 
-    For exporting the data, the data is already present in the view and when the user clicks the export button, using javascript on the client side, a csv file is generated.
+    For exporting the data, the data is already present in 
+    the view and when the user clicks the export button, 
+    using javascript on the client side, a csv file is generated.
 
 
 ## Project Setup
