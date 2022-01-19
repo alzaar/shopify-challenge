@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple App</title>
+</head>
+<body>
+  <nav>
+    <li class="crumb"><a href="/">Home</a></li>
+  </nav>
+  <form action="/logistics/save" method="post">
+    <label for="product">Product: </label>
+    <input id="product" type="text" name="product" placeholder="Product Name">
+    <label for="quantity">Quantity: </label>
+    <input id="quantity" type="text" name="quantity" placeholder="Quantity">
+    <label for="origin">Origin: </label>
+    <input id="origin" type="text" name="origin" placeholder="Shipment Origin">
+    <label for="destination">Destination: </label>
+    <input id="destination" type="text" name="destination" placeholder="Shipment Destination">
+    <input type="submit" value="Add">
+  </form>
+</body>
+</html>

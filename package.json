@@ -1,0 +1,25 @@
+{
+  "name": "shopify-interview",
+  "version": "1.0.0",
+  "description": "challenge",
+  "scripts": {
+    "start": "npx nodemon --exec babel-node ./server/main.js"
+  },
+  "author": "alzaar",
+  "license": "MIT",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.16.0",
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^14.1.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "method-override": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.8",
+    "nodemon": "^2.0.15"
+  }
+}

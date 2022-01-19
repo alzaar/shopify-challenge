@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple App</title>
+  <script>
+    function exportToCSV() {
+      const json =  <%-JSON.stringify(data)%>
+      if (!json.length) {
+        alert('Nothing to export')
+        return
+      }
+      const fields = Object.keys(json[0])
+      const replacer = (key, value) =>  value === null ? '' : value  
+      let csv = json.map(function(row){
+        return fields.map(function(fieldName){
+          return JSON.stringify(row[fieldName], replacer)
+        }).join(',')
+      })
+      csv.unshift(fields.join(','))
+      csv = csv.join('\r\n')
+      const blob = new Blob([csv])
+      if (window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveBlob(blob, "filename.csv")
+      } else {
+        const temp = window.document.createElement("a")
+        temp.href = window.URL.createObjectURL(blob, {
+          type: "text/plain"
+        })
+        temp.download = "data.csv"
+        document.body.appendChild(temp)
+        temp.click()
+        document.body.removeChild(temp)
+      }
+    }
+  </script>
+</head>
+<body>
+  <nav>
+    <li class="crumb"><a href="/logistics/create">Create</a></li>
+    <button onclick="exportToCSV()">Export To CSV</button>
+  </nav>
+  <% if (data) { %>
+    <% for (let i = 0; i < data.length; i++) { %>
+      <h2>
+        Product: <%= data[i].product %> -
+        Quantity: <%= data[i].quantity %> -
+        Origin: <%= data[i].origin %> - 
+        Destination: <%= data[i].destination %> -
+        Timestamp: <%= data[i].timestamp %>
+      </h2>
+      <form method="POST" action="logistics/<%- data[i]._id %>?_method=DELETE" >
+        <button type="submit">Delete</button>
+      </form>
+      <form method="POST" action="logistics/<%- data[i]._id %>?_method=GET" >
+        <input id="product" style="display: none;" type="text" name="product" value="<%- data[i].product %>">
+        <input id="quantity" style="display: none;" type="text" name="quantity" value="<%- data[i].quantity %>">
+        <input id="origin" style="display: none;" type="text" name="origin" value="<%- data[i].origin %>">
+        <input id="destination" style="display: none;" type="text" name="destination" value="<%- data[i].destination %>">
+        <button type="submit">Update</button>
+      </form>
+      <% } %>
+  <% } %>
+</body>
+</html>
