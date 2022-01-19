@@ -43,7 +43,8 @@ GET http://localhost:4000/logistics/create
 
 GET http://localhost:4000/logistics/:_id
 
-    GET request that renders a web page with a form and pre-filled values for the product. On clicking modify, a PUT request is made via logistics/update including the 
+    GET request that renders a web page with a form and pre-filled values for the product. On clicking modify, a 
+    PUT request is made via logistics/update including the 
     form body containing the product details to be modified and saved. If the save is successful, the user will be redirected to the home page.
 
 POST http://localhost:4000/logistics/save
